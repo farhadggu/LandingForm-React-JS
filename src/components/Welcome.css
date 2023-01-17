@@ -1,0 +1,29 @@
+.intro-welcome{
+  width: 80em;
+  background-color: #ebebee;
+  box-shadow: 10px 10px 100px rgba(0, 0, 0, 0.07);
+  padding: 1.4em;
+  border-radius: 15px;
+}
+
+.intro-welcome p{
+  line-height: 2;
+  font-size: 1.5em;
+}
+
+.welcome-page button{
+  font-size: 24px;
+  padding: 15px 30px;
+  background-color: #b83290;
+  border-radius: 10px;
+  border: 1px solid #b83290;
+  margin-top: 1.3em;
+  color: #fff !important;
+  transition: all ease .3;
+}
+
+.welcome-page button:hover{
+  background-color: #fff;
+  color: #b83290 !important;
+  border: 1px solid #b83290;
+}

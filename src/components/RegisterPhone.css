@@ -1,0 +1,27 @@
+.phone-box img{
+    width: 600px;
+    /* height: 400px; */
+}
+
+.phone-card{
+    box-shadow: 10px 10px 100px rgba(0, 0, 0, 0.07);
+    border-radius: 14px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone-card button{
+    background-color: #b83290;
+    color: #fff;
+    border: 1px solid #b83290;
+    margin-top: 15px;
+}
+
+.phone-card button:hover{
+    background-color: #fff;
+    color: #b83290;
+    border: 1px solid #b83290;
+}

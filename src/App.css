@@ -1,0 +1,29 @@
+@import url('https://v1.fontapi.ir/css/Sahel:300;400;600;700;900');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Sahel, sans-serif !important;
+}
+
+body{
+  
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.back-btn{
+  background-color: #fff !important;
+  color: #b83290 !important;
+  border: 1px solid #b83290 !important;
+}
