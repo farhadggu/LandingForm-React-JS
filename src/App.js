@@ -1,22 +1,19 @@
 
 import './App.css';
 import HomePage from './pages/HomePage';
-import { ColorModeContext, useMode } from "./theme";
-import { ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
 import Navbar from './components/Navbar';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
-  const [theme, colorMode] = useMode();
 
   return (
-    <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Navbar />
-        <HomePage />
-      </ThemeProvider>
-    </ColorModeContext.Provider>
+    <>
+      <Navbar />
+      <HomePage />
+      <ToastContainer position='top-center' />
+    </>
   );
 }
 

@@ -1,0 +1,15 @@
+.home-box img{
+  width: 100%;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  border-radius: 60px;
+  position: relative;
+}
+
+@media (max-width: 500px) {
+  .home-box img{
+    border-radius: 30px;
+  }
+}

@@ -1,0 +1,6 @@
+@media (max-width:500px) {
+  .signup-success-btn{
+    flex-direction: column;
+  }
+}
+

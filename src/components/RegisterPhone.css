@@ -1,12 +1,44 @@
-.phone-box img{
-    width: 600px;
-    /* height: 400px; */
+@media (max-width: 1600px) {
+    .phone-box{
+        padding: 200px 100px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .phone-box{
+        padding: 200px 50px;
+    }
+    .phone-box img{
+        width: 500px !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .phone-box{
+        padding: 200px 10px;
+    }
+}
+
+@media (max-width: 1000px){
+    .phone-card{
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .phone-card .MuiFormControl-root{
+        width: 100% !important;
+    }
+
+    .phone-box img{
+        display: none;
+    }
 }
 
 .phone-card{
-    box-shadow: 10px 10px 100px rgba(0, 0, 0, 0.07);
-    border-radius: 14px;
-    width: 500px;
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,14 +46,31 @@
 }
 
 .phone-card button{
-    background-color: #b83290;
+    background-color: #b83290 !important;
     color: #fff;
     border: 1px solid #b83290;
     margin-top: 15px;
+    font-size: 14px !important;
+}
+
+.phone-card button:disabled{
+  background-color: #696969 !important;
 }
 
 .phone-card button:hover{
-    background-color: #fff;
-    color: #b83290;
-    border: 1px solid #b83290;
+  background-color: #fff !important;
+  color: #b83290;
+  border: 1px solid #b83290;
+}
+
+.phone-card .back-btn {
+  background-color: #fff !important;
+  color: #b83290 !important;
+  border: 1px solid #b83290 !important;
+}
+
+.phone-card .back-btn:hover{
+  background-color: #b83290 !important;
+  color: #fff !important;
+  border: 1px solid #b83290 !important;
 }

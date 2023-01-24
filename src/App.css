@@ -1,14 +1,18 @@
-@import url('https://v1.fontapi.ir/css/Sahel:300;400;600;700;900');
+@import url("https://nahalgasht.com/wp-content/themes/nahalgasht/assets/fonts/iranyekanwebregularfanum.woff");
+@font-face {
+  font-family: 'IRANYekanWeb';
+  src: local('IRANYekanWeb'), url(./fonts/iranyekanwebregularfanum.woff) format('truetype');
+}
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Sahel, sans-serif !important;
+  font-family: IRANYekanWeb, sans-serif !important;
 }
 
-body{
-  
+body {
+  background: #ebebeb;
 }
 
 input::-webkit-outer-spin-button,
@@ -18,12 +22,27 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.back-btn{
-  background-color: #fff !important;
-  color: #b83290 !important;
-  border: 1px solid #b83290 !important;
+
+
+.input-phone {
+  width: 80%;
+  max-height: 60%;
 }
+
+.input-phone p {
+  color: red;
+  font-size: 12px;
+}
+
+button:disabled {
+  background-color: #979797 !important;
+  border-color: inherit !important;
+}
+
+/* .forms-page .MuiOutlinedInput-notchedOutline{
+  border-color: #881a67 !important;
+} */

@@ -1,32 +1,31 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Tooltip from '@mui/material/Tooltip';
-
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 
 function Navbar() {
-
   return (
-    <AppBar position="static" sx={{background: "#ebebeb"}}>
-      <Container maxWidth="xl">
-        <Toolbar disableGutters sx={{display:"flex", justifyContent:"space-between"}} >
-
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip>
-              <IconButton sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="https://nahalgasht.com/wp-content/themes/nahalgasht/assets/img/logo-r.svg" />
-              </IconButton>
-            </Tooltip>
-          </Box>
-
-          <Typography sx={{color: "#000", cursor: "pointer"}}>کربلا</Typography>
-        </Toolbar>
-      </Container>
+    <AppBar
+      position="static"
+      sx={{ background: "#ebebeb", margin: "10px 0", boxShadow: "none" }}
+    >
+      <Box
+        className="navbar"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        gap="20px"
+      >
+        <img
+          src="https://nahalgasht.com/wp-content/themes/nahalgasht/assets/img/logo-r.svg"
+          alt="nahalgasht"
+          width="50px"
+          height="50px"
+        />
+        <Typography fontWeight="600" fontSize={22} sx={{ color: "#000" }}>
+          نهال گشت
+        </Typography>
+      </Box>
     </AppBar>
   );
 }

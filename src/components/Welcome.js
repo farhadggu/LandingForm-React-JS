@@ -1,22 +1,14 @@
 import { ArrowBackOutlined } from "@mui/icons-material";
-import { Button, Grid, Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import "./Welcome.css"
 
 export default function Welcome({ setActive }) {
   return (
-    <Box
-      display="flex"
-      flexDirection='column'
-      justifyContent="center"
-      alignItems="center"
-      className="welcome-page"
-    >
-      <Box item md={12}>
-        <Typography sx={{color: '#b83290 !important'}} fontSize={28} m={5}>طرح قافله</Typography>
-      </Box>
-      <Box item md={12} className="intro-welcome">
-        <Typography component='p'>
+    <>
+      <Box md={12} className="intro-welcome">
+        <Typography sx={{fontSize:"32px", fontWeight:"700", margin: "10px 0 20px"}} fontSize={28}>طرح قافله</Typography>
+        <Typography component='p' sx={{fontSize:"16px", lineHeight: '2'}}>
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
           استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
           در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
@@ -33,6 +25,6 @@ export default function Welcome({ setActive }) {
       <Button onClick={() => setActive((prev) => prev + 1)} endIcon={<ArrowBackOutlined />}>
         ثبت نام
       </Button>
-    </Box>
+    </>
   );
 }
