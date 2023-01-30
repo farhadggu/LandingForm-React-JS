@@ -15,9 +15,12 @@ export default function Forms({
   token,
   setActive,
   loading,
-  setLoading
+  setLoading,
+  setActiveStep,
+  allProvinceCityData,
+  setAllProvinceCityData,
+  active
 }) {
-  const [allData, setAllData] = useState();
   const [province, setProvince] = useState();
   const [allCity, setAllCity] = useState();
 
@@ -32,23 +35,28 @@ export default function Forms({
       },
     })
       .then((resp) => {
-        setAllData(resp.data.data);
-        setProvince(resp.data.data.map((item) => item.province_name_fa));
+        setAllProvinceCityData(resp.data.data);
+        setProvince(resp.data.data.map((item) => {return {id:item.id, province:item.province_name_fa}}));
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
-  const searchCity = (e) => {
-    setData({ ...data, [e.target.name]: e.target.value });
+  // const handleChangeCity = (e) => {
+  //   setData({ ...data, [e.target.name]: e.target.value });
+  // }
 
-    allData
-      ?.filter((item) => item.id === e.target.value + 1)
-      ?.map((item) => setAllCity(item.cities));
+  const searchCity = () => {
+    return allProvinceCityData
+      ?.filter((item) => item.id === data.province_id)
+      .map((item) => setAllCity(item.cities));
   };
 
-
+  useEffect(() => {
+    searchCity()
+  }, [data.province_id])
+  
   if (toggle === "forMe") {
     return (
       <FormsMe
@@ -63,6 +71,7 @@ export default function Forms({
         setActive={setActive}
         setLoading={setLoading}
         loading={loading}
+        setActiveStep={setActiveStep}
       />
     );
   } else if (toggle === "forOthers") {
@@ -79,6 +88,7 @@ export default function Forms({
         setActive={setActive}
         setLoading={setLoading}
         loading={loading}
+        setActiveStep={setActiveStep}
       />
     );
   }

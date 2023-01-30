@@ -13,7 +13,8 @@ export default function RegisterCode({
   setLoading,
   setActive,
   error,
-  setToken
+  setToken,
+  setActiveStep
 }) {
 
   const [code, setCode] = useState("")
@@ -26,6 +27,7 @@ export default function RegisterCode({
     setLoading(true)
     e.preventDefault();
     // setActive((prev) => prev + 1);
+    // setActiveStep((prev) => prev + 1)
     await axios.post(`${baseUrl}/api/v1/login/`, {phone: data.phone, token: code}, {
       headers: {
         'Content-Type': 'application/json',
@@ -36,6 +38,7 @@ export default function RegisterCode({
       toast.success(resp.data.message)
       setToken(resp.data.data.token)
       setActive((prev) => prev + 1)
+      setActiveStep((prev) => prev + 1)
     }).catch((error) => {
       setLoading(false)
       toast.error(error.response.data.message)
@@ -49,12 +52,13 @@ export default function RegisterCode({
         flexDirection="column"
         justifyContent="center"
         alignItems="center"
+        p="0 10px"
       >
         <Typography m={4} fontSize={26} fontWeight="600">
           کد اعتبار سنجی
         </Typography>
         <Typography mb={4} fontSize={20}>
-          کد اعتبار سنجی ارسال شده را وارد کنید
+          کد ارسال شده را وارد کنید
         </Typography>
       </Box>
       <TextField

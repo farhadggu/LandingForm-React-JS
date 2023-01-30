@@ -26,8 +26,6 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-
-
 .input-phone {
   width: 80%;
   max-height: 60%;
@@ -42,7 +40,3 @@ button:disabled {
   background-color: #979797 !important;
   border-color: inherit !important;
 }
-
-/* .forms-page .MuiOutlinedInput-notchedOutline{
-  border-color: #881a67 !important;
-} */

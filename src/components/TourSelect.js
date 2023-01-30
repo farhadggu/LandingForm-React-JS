@@ -15,10 +15,12 @@ export default function TourSelect({
   token,
   setActive,
   loading,
-  setLoading
+  setLoading,
+  toggle,
+  setToggle,
+  setActiveStep
 }) {
   const [tour, setTour] = useState("");
-  const [toggle, setToggle] = useState("");
 
   const handleChangeTour = (event) => {
     setTour(event.target.value);
@@ -31,12 +33,13 @@ export default function TourSelect({
       justifyContent="flex-start"
       alignItems="flex-start"
       width="100%"
+      padding="10px 40px"
     >
       <Typography
         margin="30px 0"
-        fontSize={24}
+        fontSize={20}
         fontWeight="bold"
-        sx={{ color: "#b7328f" }}
+        sx={{ color: "#000" }}
       >
         تور خود را انتخاب کنید
       </Typography>
@@ -60,6 +63,14 @@ export default function TourSelect({
           </Select>
         </FormControl>
 
+        {tour === "کربلا" && (
+          <Typography mt={4} fontSize={18}>
+            از آنجا که زیارت آداب مشخصی دارد مبنای ما بر صحت اطلاعات وارد شده
+            توسط شما صداقت شماست ولی طبیعی است افرادی که واجد شرایط بودن خود را
+            بتوانند احراز کنند در اولویت قرار خواهند داشت.
+          </Typography>
+        )}
+
         {tour && (
           <Box
             margin="30px 0"
@@ -71,22 +82,30 @@ export default function TourSelect({
           >
             <Box>
               <Typography
-                fontSize={24}
+                fontSize={20}
                 fontWeight="bold"
-                sx={{ color: "#b7328f" }}
+                sx={{ color: "#000" }}
               >
                 تور را برای چه کسی می خواهید؟
               </Typography>
             </Box>
             <Box display="flex" alignItems="center" gap="10px">
               <Typography
-                onClick={() => setToggle("forMe")}
+                onClick={() => {
+                  setActive((prev) => prev + 1);
+                  setToggle("forMe");
+                  setActiveStep((prev) => prev + 1)
+                }}
                 className={`for-me ${toggle === "forMe" ? "active" : ""}`}
               >
                 برای خودم
               </Typography>
               <Typography
-                onClick={() => setToggle("forOthers")}
+                onClick={() => {
+                  setActive((prev) => prev + 1);
+                  setToggle("forOthers");
+                  setActiveStep((prev) => prev + 1)
+                }}
                 className={`for-others ${
                   toggle === "forOthers" ? "active" : ""
                 }`}
@@ -97,19 +116,6 @@ export default function TourSelect({
           </Box>
         )}
       </Box>
-      {tour && (
-        <Forms
-          data={data}
-          handleChange={handleChange}
-          toggle={toggle}
-          error={error}
-          setData={setData}
-          token={token}
-          setActive={setActive}
-          loading={loading}
-          setLoading={setLoading}
-        />
-      )}
     </Box>
   );
 }
