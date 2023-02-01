@@ -23,7 +23,7 @@ function Navbar() {
           height="50px"
         />
         <Typography fontWeight="600" fontSize={22} sx={{ color: "#000" }}>
-          نهال گشت
+          تور اروپا
         </Typography>
       </Box>
     </AppBar>

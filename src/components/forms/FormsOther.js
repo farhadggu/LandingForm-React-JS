@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { baseUrl } from "../../utils/services";
 import "./Forms.css";
 import FormsOtherFirst from "./FormsOtherFirst";
 import FormsOtherSecond from "./FormsOtherSecond";
@@ -32,26 +31,6 @@ export default function FormsOther({
   setActiveStep
 }) {
   const [next, setNext] = useState(0)
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-    // setData({ ...data, other: true });
-    // axios
-    //   .post(`${baseUrl}/api/v1/toor`, data, {
-    //     headers: {
-    //       Authorization: `Bearer ${token}`,
-    //       "Content-Type": "application/json", 
-    //       Accept: "application/json",
-    //     },
-    //   })
-    //   .then((resp) => {
-    //     toast.success(resp.data.message);
-    //     setActive((prev) => prev + 1);
-    //   })
-    //   .catch((error) => {
-    //     toast.error(error.response.data.message);
-    //   });
-  };
 
   const componentLists = [
     <FormsOtherFirst

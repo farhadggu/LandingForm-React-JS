@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { baseUrl } from "../utils/services";
 import { Box, Button, FormLabel, Grid, TextField } from "@mui/material";
 import axios from "axios";
 import "./ChechInformation.css";
@@ -50,57 +49,6 @@ export default function FileDescription({
     setImages(images.filter((item, index) => index !== id));
   };
 
-  // useEffect(() => {
-  //   images.map((item) => {
-  //     return (axios.post('http://192.168.100.19:8001/api/v1/upload', {file: item.base64}, {
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         "Accept": "application/json",
-  //         "Authorization": `Bearer 1|uxioJxwyDtO84E6k2E3pKuzdZTEwVZN7xUV5ZlfN`
-  //       }
-  //     }).then((resp) => {
-  //       console.log(resp)
-  //       setData({...data, file: {...data.file, ...resp.data.data.file_path}})
-  //     }).catch((error) => {
-  //       console.log(error)
-  //     })
-  //   )})
-  // }, [images])
-
-  // const convertBase64 = (file) => {
-  //   return new Promise((resolve, reject) => {
-  //     const fileReader = new FileReader();
-  //     fileReader.readAsDataURL(file)
-  //     fileReader.onload = () => {
-  //       resolve(fileReader.result);
-  //     }
-  //     fileReader.onerror = (error) => {
-  //       reject(error);
-  //     }
-  //   })
-  // }
-
-  // const handleFileRead = async (event) => {
-  //   const file = event.target.files
-  //   Promise.all(Array.from(file).map((item) => {
-  //     const base64 = convertBase64(item)
-  //     setFile({...file, file:base64})
-  //   }))
-
-  // await axios.post(`${baseUrl}/api/v1/upload`, {file:base64}, {
-  //   headers: {
-  //     'Authorization': `Bearer ${token}`,
-  //     'Content-Type': "application/json",
-  //     'Accept': "application/json"
-  //   }
-  // }).then((resp) => {
-  //   console.log(resp)
-  // }).catch((error) => {
-  //   console.log(error)
-  // })
-  // console.log(base64)
-  // }
-  console.log(images);
   return (
     <Box
       mt={2}
@@ -205,13 +153,12 @@ export default function FileDescription({
       </Box>
       <Grid item md={12} sm={12} xs={12} p="0 10px">
         <FormLabel id="demo-row-radio-buttons-group-label">
-          توضیحات در مورد اینکه چرا خود را واجد شرایط استفاده از این کمک خیریه
-          می دانید:
+        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ:
         </FormLabel>
         <TextField
           multiline
           rows={5}
-          placeholder="توضیحات در مورد اینکه چرا خود را واجد شرایط استفاده از این کمک خیریه می دانید"
+          placeholder="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ"
           type="number"
           name="description"
           value={data.description}

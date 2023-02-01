@@ -3,22 +3,14 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import Forms from "./forms/index";
 import { useState } from "react";
 import "./TourSelect.css";
 
 export default function TourSelect({
-  data,
-  handleChange,
-  error,
-  setData,
-  token,
   setActive,
-  loading,
-  setLoading,
   toggle,
   setToggle,
-  setActiveStep
+  setActiveStep,
 }) {
   const [tour, setTour] = useState("");
 
@@ -59,15 +51,23 @@ export default function TourSelect({
             label="انتخاب تور"
             onChange={handleChangeTour}
           >
-            <MenuItem value="کربلا">کربلا</MenuItem>
+            <MenuItem value="اروپا">اروپا</MenuItem>
           </Select>
         </FormControl>
 
-        {tour === "کربلا" && (
+        {tour === "اروپا" && (
           <Typography mt={4} fontSize={18}>
-            از آنجا که زیارت آداب مشخصی دارد مبنای ما بر صحت اطلاعات وارد شده
-            توسط شما صداقت شماست ولی طبیعی است افرادی که واجد شرایط بودن خود را
-            بتوانند احراز کنند در اولویت قرار خواهند داشت.
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+            استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
+            ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،
+            و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای
+            زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و
+            متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان
+            رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد
+            کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه
+            راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل
+            حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود
+            طراحی اساسا مورد استفاده قرار گیرد.
           </Typography>
         )}
 
@@ -94,7 +94,7 @@ export default function TourSelect({
                 onClick={() => {
                   setActive((prev) => prev + 1);
                   setToggle("forMe");
-                  setActiveStep((prev) => prev + 1)
+                  setActiveStep((prev) => prev + 1);
                 }}
                 className={`for-me ${toggle === "forMe" ? "active" : ""}`}
               >
@@ -104,7 +104,7 @@ export default function TourSelect({
                 onClick={() => {
                   setActive((prev) => prev + 1);
                   setToggle("forOthers");
-                  setActiveStep((prev) => prev + 1)
+                  setActiveStep((prev) => prev + 1);
                 }}
                 className={`for-others ${
                   toggle === "forOthers" ? "active" : ""

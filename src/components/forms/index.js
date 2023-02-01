@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import "./Forms.css";
 import FormsMe from "./FormsMe";
 import FormsOther from "./FormsOther";
-import { baseUrl } from "../../utils/services";
 
 
 export default function Forms({
@@ -23,29 +22,6 @@ export default function Forms({
 }) {
   const [province, setProvince] = useState();
   const [allCity, setAllCity] = useState();
-
-  useEffect(() => {
-    axios({
-      url: `${baseUrl}/api/v1/province`,
-      method: "get",
-      data: null,
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
-      .then((resp) => {
-        setAllProvinceCityData(resp.data.data);
-        setProvince(resp.data.data.map((item) => {return {id:item.id, province:item.province_name_fa}}));
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
-  // const handleChangeCity = (e) => {
-  //   setData({ ...data, [e.target.name]: e.target.value });
-  // }
 
   const searchCity = () => {
     return allProvinceCityData

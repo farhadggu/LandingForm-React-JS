@@ -3,12 +3,10 @@ import { Box } from "@mui/system";
 import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { baseUrl } from "../utils/services";
 import "./RegisterPhone.css";
 
 export default function RegisterCode({
   data,
-  handleChange,
   loading,
   setLoading,
   setActive,
@@ -24,25 +22,11 @@ export default function RegisterCode({
   }
 
   const handleCodeRegister = async (e) => {
-    setLoading(true)
+    // setLoading(true)
     e.preventDefault();
-    // setActive((prev) => prev + 1);
-    // setActiveStep((prev) => prev + 1)
-    await axios.post(`${baseUrl}/api/v1/login/`, {phone: data.phone, token: code}, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    }).then((resp) => {
-      setLoading(false)
-      toast.success(resp.data.message)
-      setToken(resp.data.data.token)
-      setActive((prev) => prev + 1)
-      setActiveStep((prev) => prev + 1)
-    }).catch((error) => {
-      setLoading(false)
-      toast.error(error.response.data.message)
-    })
+    setActive((prev) => prev + 1);
+    setActiveStep((prev) => prev + 1)
+    toast.success("شما با موفقیت وارد شدید")
   };
 
   return (

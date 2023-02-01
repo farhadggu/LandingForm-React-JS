@@ -2,7 +2,6 @@ import { Button, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { baseUrl } from "../utils/services";
 import "./RegisterPhone.css";
 
 export default function RegisterPhone({
@@ -16,28 +15,9 @@ export default function RegisterPhone({
 
   const handlePhoneRegister = async (e) => {
     e.preventDefault();
-    // setActive((prev) => prev + 1)
-    setLoading(true);
-    await axios
-      .post(
-        `${baseUrl}/api/v1/login/`,
-        { phone: data.phone },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-        }
-      )
-      .then((resp) => {
-        setLoading(false);
-        toast.success(resp.data.message);
-        setActive((prev) => prev + 1);
-      })
-      .catch((error) => {
-        setLoading(false);
-        toast.error(error.response.data.message);
-      });
+    setActive((prev) => prev + 1)
+    toast.success('کد ارسالی را وارد نمایید');
+    // setLoading(true);
   };
 
   return (

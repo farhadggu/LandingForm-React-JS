@@ -14,7 +14,6 @@ import LoadingButton from "@mui/lab/LoadingButton";
 import SaveIcon from "@mui/icons-material/Save";
 import close from "../images/close.png";
 import axios from "axios";
-import { baseUrl } from "../utils/services";
 import { toast } from "react-toastify";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -37,65 +36,31 @@ export default function AcceptRulesData({
   const [province, setProvince] = useState("");
   const [city, setCity] = useState("");
 
-  useEffect(() => {
-    allProvinceCityData.filter((items) => {
-      if (items.id === data.province_id) {
-        setProvince(items.province_name_fa);
-        items.cities.map((item) => {
-          if (item.id === data.city_id) {
-            setCity(item.name_fa);
-          }
-        });
-      }
-    });
-  }, [data.city_id, data.province_id, allProvinceCityData]);
-  console.log(images)
+  // useEffect(() => {
+  //   allProvinceCityData.filter((items) => {
+  //     if (items.id === data.province_id) {
+  //       setProvince(items.province_name_fa);
+  //       items.cities.map((item) => {
+  //         if (item.id === data.city_id) {
+  //           setCity(item.name_fa);
+  //         }
+  //       });
+  //     }
+  //   });
+  // }, [data.city_id, data.province_id, allProvinceCityData]);
+
   const handleSubmit = async (e) => {
     e.preventDefault()
-    let base64Images = []
-    setIsLoading(true)
-    setData({ ...data, other: true });
-    
-    await images.map((item) => {
-      axios.post('http://192.168.100.19:8001/api/v1/upload', {file: item.base64}, {
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${token}`
-        }
-      }).then((resp) => {
-        setIsLoading(false)
-        base64Images.push(resp.data.data.file_path)
-        setData({...data, files: base64Images})
-      }).catch((error) => {
-        setIsLoading(false)
-        console.log(error)
-      })
-    })
-    console.log(base64Images)
-    await axios
-      .post(`${baseUrl}/api/v1/toor`, data, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      })
-      .then((resp) => {
-        toast.success(resp.data.message);
-        setActive((prev) => prev + 1);
-      })
-      .catch((error) => {
-        console.log(error)
-        toast.error(error.response.data.message);
-      });
+    toast.success("ثبت نام انجام شد");
+    setActive((prev) => prev + 1);
+    setActiveStep(((prev) => prev + 1))
   }
-  console.log(data);
+
   return (
     <>
       <Box p={3}>
         <Typography fontSize={18} fontWeight="600" mb={2}>
-          تایید اطلاعات وارد شده به معنای پذیرش قوانین و مقررات نهال گشت است.
+          تایید اطلاعات وارد شده به معنای پذیرش قوانین و مقررات سایت است.
         </Typography>
 
         <Typography>

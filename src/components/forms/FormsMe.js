@@ -15,7 +15,6 @@ import {
 import { Box } from "@mui/system";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { baseUrl } from "../../utils/services";
 import "./Forms.css";
 
 const ITEM_HEIGHT = 48;
@@ -34,7 +33,6 @@ export default function FormsMe({
   error,
   handleChange,
   setData,
-  searchCity,
   province,
   allCity,
   token,
@@ -44,26 +42,9 @@ export default function FormsMe({
   setActiveStep,
 }) {
   const submitHandler = (e) => {
-    // setLoading(true)
     e.preventDefault();
     setActiveStep((prev) => prev + 1)
     setActive((prev) => prev + 1)
-    // axios
-    //   .post(`${baseUrl}/api/v1/toor`, data, {
-    //     headers: {
-    //       Authorization: `Bearer ${token}`,
-    //       "Content-Type": "application/json",
-    //       Accept: "application/json",
-    //     },
-    //   })
-    //   .then((resp) => {
-    //     setLoading(false)
-    //     toast.success(resp.data.message);
-        // setActive((prev) => prev + 1)
-    //   })
-    //   .catch((error) => {
-    //     setLoading(false)
-    //   });
   };
 
   return (

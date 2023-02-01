@@ -4,7 +4,7 @@ import RegisterPhone from "../components/RegisterPhone";
 import TourSelect from "../components/TourSelect";
 import Welcome from "../components/Welcome";
 import { validateInput } from "../utils/validateForms";
-import karbala from "../images/karbala.jpg";
+import welcome from "../images/welcome.jpg";
 import "./HomePage.css";
 import { Container } from "@mui/material";
 import SignUpSuccess from "../components/SignUpSuccess";
@@ -129,7 +129,7 @@ export default function HomePage() {
 
   return (
     <Container maxWidth="lg" className="home-box">
-      <img src={karbala} alt="karbala" />
+      <img src={welcome} alt="karbala" />
       <Container className="welcome-box" style={{maxWidth: "calc(100% - 100px)"}}>
         <Box className="welcome-page-stepper">
           {active > 0 && <StepperForm activeStep={activeStep} toggle={toggle} />}

@@ -1,11 +1,11 @@
+import React from "react";
 import { Step, StepLabel, Stepper } from "@mui/material";
 import StepConnector, {
   stepConnectorClasses,
 } from "@mui/material/StepConnector";
-import { styled } from "@mui/material/styles";
 import Check from "@mui/icons-material/Check";
 import PropTypes from "prop-types";
-import React, { useState } from "react";
+import { styled } from "@mui/material/styles";
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {

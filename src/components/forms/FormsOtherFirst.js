@@ -86,8 +86,10 @@ export default function FormsOtherFirst({
               MenuProps={MenuProps}
             >
               <MenuItem value="عادی">عادی</MenuItem>
-              <MenuItem value="مسئول خیریه">مسئول خیریه</MenuItem>
-              <MenuItem value="امام جماعت">امام جماعت</MenuItem>
+              <MenuItem value="2عادی">2عادی</MenuItem>
+              <MenuItem value="3عادی">3عادی</MenuItem>
+              <MenuItem value="4عادی">4عادی</MenuItem>
+              
             </Select>
           </FormControl>
         </Grid>
